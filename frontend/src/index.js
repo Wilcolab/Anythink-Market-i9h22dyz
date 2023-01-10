@@ -9,12 +9,19 @@ import { ConnectedRouter } from "react-router-redux";
 
 import App from "./components/App";
 import theme from "./styles/theme"
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+  }
+`
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <ThemeProvider theme={theme}>
+        <GlobalStyle whiteColor/>
         <Switch>
           <Route path="/" component={App} />
         </Switch>
