@@ -8,13 +8,17 @@ import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
 
 import App from "./components/App";
+import theme from "./styles/theme"
+import { ThemeProvider } from "styled-components";
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Switch>
-        <Route path="/" component={App} />
-      </Switch>
+      <ThemeProvider theme={theme}>
+        <Switch>
+          <Route path="/" component={App} />
+        </Switch>
+      </ThemeProvider>
     </ConnectedRouter>
   </Provider>,
 
