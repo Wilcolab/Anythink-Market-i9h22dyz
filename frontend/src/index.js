@@ -9,12 +9,13 @@ import { ConnectedRouter } from "react-router-redux";
 
 import App from "./components/App";
 import theme from "./styles/theme"
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, GlobalStyle } from "styled-components";
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Switch>
           <Route path="/" component={App} />
         </Switch>
