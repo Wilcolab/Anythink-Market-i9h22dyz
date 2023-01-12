@@ -9,6 +9,8 @@ import {
   HOME_PAGE_UNLOADED,
   APPLY_TAG_FILTER,
 } from "../../constants/actionTypes";
+import { ThemeProvider } from "styled-components";
+import theme from '../../styles/theme'
 
 const Promise = global.Promise;
 
@@ -45,8 +47,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <Banner />
-
+        <ThemeProvider theme={theme}>
+          <Banner />
+        </ThemeProvider>
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
           <MainView />
