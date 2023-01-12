@@ -8,7 +8,7 @@ import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
 
 import { ThemeProvider } from 'styled-components'
-import { theme } from './styles/theme'
+import theme from './styles/theme'
 
 import App from "./components/App";
 
